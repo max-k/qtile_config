@@ -13,12 +13,4 @@ groups_dict = {"1": "ampersand",
                "8": "underscore",
                "9": "ccedilla"}
 
-
-def generate_groups():
-    groups = []
-    for group in groups_dict:
-        groups.append(Group(group))
-    return sorted(groups, key=lambda g: g.name)
-
-
-groups = generate_groups()
+groups = sorted([Group(group) for group in groups_dict], key=lambda g: g.name)
